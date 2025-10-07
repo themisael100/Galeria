@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de imágenes</title>
+     <link rel="icon" type="image/png" href="icono.png"> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Galería de imágenes</h1>
+
+        <div class="categories" id="categories">
+            <button class="category-btn active" data-category="all">Todas</button>
+            <button class="category-btn" data-category="ciencia">Ciencia en la vida cotidiana</button>
+            <button class="category-btn" data-category="innovacion">Innovación y avances científicos</button>
+            <button class="category-btn" data-category="naturaleza">Naturaleza y biodiversidad</button>
+        </div>
+
+        <div class="subcategories" id="subcategories">
+        </div>
+
+        <div id="content">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Cargando imágenes...</p>
+            </div>
+        </div>
+
+        <div class="pagination" id="pagination" style="display: none;">
+            <button id="prevBtn">Anterior</button>
+            <button id="nextBtn">Siguiente</button>
+        </div>
+        <div class="page-info" id="pageInfo"></div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button class="arrow arrow-left" onclick="changeImage(-1)">&#10094;</button>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="">
+        </div>
+        <button class="arrow arrow-right" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
